@@ -1,20 +1,17 @@
 import java.net.*;
 import java.io.*;
 
-public class server
-{
+public class server {
     public static void main(String[] args){
         try{
-            ServerSocket socket = new ServerSocket(23456);
+            ServerSocket socket = new ServerSocket(23456); // Creates serversocket and binds to port 23456
             while(true){
-                Socket client = socket.accept();
-                // Instantiate an inputstream to read inputstream from client socket.
-                InputStream in = client.getInputStream();
-                // Receive message from the client.
-                BufferedReader bin = new BufferedReader(new InputStreamReader(in));
-                String line;
-                // Instantiate a printwriter to write to the client socket output stream.
-                PrintWriter pout = new PrintWriter(client.getOutputStream(), true);
+                Socket client = socket.accept(); // Creates client socket and accepts incoming connections.
+                
+                InputStream in = client.getInputStream(); // Instantiate an inputstream to read inputstream from client socket.
+                BufferedReader bin = new BufferedReader(new InputStreamReader(in)); // Reads character streams from InputStream reader, guaranteeing byte level data.
+                String line; // String to hold data to send back to the printwriter functions.
+                PrintWriter pout = new PrintWriter(client.getOutputStream(), true); // Instantiate a printwriter to write to the client socket output stream.
 
                 // While there is data in the buffer, server will echo the same data back to the client.
                 while( (line = bin.readLine()) != null) 
