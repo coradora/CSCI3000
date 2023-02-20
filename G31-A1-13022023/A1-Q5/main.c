@@ -40,7 +40,7 @@ int main (void)
     pid = fork(); 
     if(pid < 0){
         // fork returns -1 if fork fails
-        fprintf(stderr, 'Fork failed');
+        fprintf(stderr, "Fork failed");
         return 1;
     }
 
