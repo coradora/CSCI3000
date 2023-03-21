@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class client {
     public static void main(String[] args){
+
         try{
             Socket socket = new Socket("127.0.0.1", 23456); // Creates socket and attempts connection to server socket.
             PrintWriter pout = new PrintWriter(socket.getOutputStream(), true); // Instantiate a printwriter to write to the server socket output stream. 
