@@ -8,12 +8,10 @@ public class FCFS implements Algorithm
 {
     private List<Task> queue;
     private Task currentTask;
-
     private int tasksRun;
 
     public FCFS(List<Task> queue) {
         this.queue = queue;
-
         tasksRun = queue.size();
     }
 
@@ -22,7 +20,6 @@ public class FCFS implements Algorithm
 
         while (!queue.isEmpty()) {
             currentTask = pickNextTask();
-            
             CPU.run(currentTask, currentTask.getBurst());
 
             // remove the task

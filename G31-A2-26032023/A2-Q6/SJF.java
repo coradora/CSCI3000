@@ -29,17 +29,17 @@
      }
  
      public Task pickNextTask() {
-        int i = 0;
-        Task task = this.queue.get(i);
-        int j = task.getBurst();
+        int m = 0;
+        Task task = this.queue.get(m);
+        int n = task.getBurst();
         for(int i = 1; i < this.queue.size(); i++){
-            if (this.queue.get(i).getBurst() >= j){
+            if (this.queue.get(i).getBurst() >= n){
                 continue;
             };
-            i = i;
-            j = this.queue.get(i).getBurst();
+            m = i;
+            n = this.queue.get(i).getBurst();
         }
-        task = this.queue.get(i);
+        task = this.queue.get(m);
         return task;
      }
  }

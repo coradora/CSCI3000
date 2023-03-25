@@ -49,12 +49,12 @@ public class Driver
             case "SJF":
                 scheduler = new SJF(queue);
                 break;
-            /*case "PRI":
+            case "PRI":
                 scheduler = new Priority(queue);
                 break;
             case "RR":
                 scheduler = new RR(queue);
-                break;*/
+                break;
             default:
                 System.err.println("Invalid algorithm");
                 System.exit(0);
