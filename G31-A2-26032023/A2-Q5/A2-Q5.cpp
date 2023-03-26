@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-// Globals 
+// Globals
 int globalMin;
 int globalMax;
 double globalMean;
